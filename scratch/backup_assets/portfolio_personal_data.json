@@ -1,0 +1,142 @@
+{
+  "personal": {
+    "name": "Naseem Khan",
+    "title": "Full-Stack Developer & Software Engineer",
+    "tagline": "Crafting high-performance web applications with modern frontend, scalable cloud backends, and AI integrations.",
+    "email": "khannaseem1704@gmail.com",
+    "phone": "+918169045425",
+    "location": "Mumbai, Maharashtra, India",
+    "github": "https://github.com/Naseem2917",
+    "linkedin": "https://www.linkedin.com/in/naseem2917/"
+  },
+  "about": {
+    "summary": "B.Sc. IT student currently pursuing Semester 5 at GES Shri Bhausaheb Vartak College (University of Mumbai). Achieved 9.27 SGPA in Semester 4 with a 9.06 Cumulative CGPA (Grade O). Experienced in building full-stack web applications using React, TypeScript, Firebase, and modern development tools. Passionate about software engineering, leading student development teams, and organizing technical events.",
+    "highlights": [
+      "9.06 Cumulative CGPA (Grade O) in B.Sc. IT",
+      "Hackathon Team Leader (Led 3-member developer team to build full-stack AI web app)",
+      "Technical Event Head & Organizer for Tech Today festival"
+    ]
+  },
+  "skills": {
+    "frontend": [
+      "React",
+      "TypeScript",
+      "JavaScript (ES6+)",
+      "HTML5 / CSS3",
+      "Tailwind CSS",
+      "Vite",
+      "Three.js / WebGL",
+      "Recharts",
+      "REST APIs",
+      "Responsive UI/UX"
+    ],
+    "backend_and_cloud": [
+      "Firebase",
+      "Cloud Firestore",
+      "Firebase Authentication",
+      "Google Gemini API",
+      "Cloudflare Workers",
+      "Node.js Basics",
+      "MySQL / SQL",
+      "Real-time Data Architecture"
+    ],
+    "core_academics": [
+      "Data Structures & Algorithms",
+      "Java",
+      "Python",
+      "C / C++",
+      "Database Management Systems (DBMS)",
+      "Software Engineering"
+    ],
+    "tools": [
+      "Git & GitHub",
+      "VS Code",
+      "Postman",
+      "Cloudflare",
+      "Firebase Console"
+    ]
+  },
+  "projects": [
+    {
+      "id": "ai-code-typer",
+      "title": "AI Code Typer",
+      "subtitle": "Independent AI Platform",
+      "description": "Interactive coding-typing platform with Google Gemini AI practice generation, cloud sync, WPM performance analytics, levels, badges, and Cloudflare Worker proxy architecture.",
+      "techStack": [
+        "React",
+        "TypeScript",
+        "Firebase",
+        "Google Gemini API",
+        "Vite",
+        "Tailwind CSS",
+        "Recharts",
+        "Cloudflare Workers"
+      ],
+      "githubUrl": "https://github.com/Naseem2917/ai-code-typer",
+      "demoUrl": "https://naseem2917.github.io/ai-code-typer/",
+      "image": "images/ai-code-typer.jpg",
+      "featured": true
+    },
+    {
+      "id": "smart-complaint-box",
+      "title": "Smart Complaint Box",
+      "subtitle": "AI Management System (Team Lead)",
+      "description": "AI complaint classification & priority triage, invalid text filter, petition-style group complaints with supporting signatures, real-time tracking & administrative dashboard.",
+      "techStack": [
+        "React 19",
+        "TypeScript",
+        "Firebase",
+        "Firestore",
+        "Google Gemini API",
+        "Tailwind CSS",
+        "Recharts"
+      ],
+      "githubUrl": "https://github.com/Naseem2917/Smart-Complaint-Box",
+      "demoUrl": "https://smart-complaint-box-2025.web.app/",
+      "image": "images/smart-complaint.jpg",
+      "featured": true
+    },
+    {
+      "id": "whatsapp-clone",
+      "title": "WhatsApp Clone",
+      "subtitle": "Real-Time AI Messaging (Team Lead)",
+      "description": "Real-time messaging with Firestore, typing indicators, Google Gemini AI message rewriting, trip planning, smart replies, message reactions, and scheduled messages.",
+      "techStack": [
+        "React",
+        "TypeScript",
+        "Firebase",
+        "Firestore",
+        "Google Gemini API",
+        "Tailwind CSS",
+        "Vite"
+      ],
+      "githubUrl": "https://github.com/Naseem2917/WhatsApp",
+      "demoUrl": "https://whatsapp-hackthon.web.app/",
+      "image": "images/whatsapp-clone.jpg",
+      "featured": true
+    }
+  ],
+  "experience_and_education": [
+    {
+      "type": "education",
+      "role": "B.Sc. Information Technology",
+      "organization": "GES Shri Bhausaheb Vartak College (University of Mumbai)",
+      "period": "2024 - 2027",
+      "description": "Currently pursuing Semester 5 (Expected Graduation: 2027). Scored 9.27 SGPA in Semester 4 with a Cumulative CGPA of 9.06 (Grade O). Key coursework includes Java, Python, C/C++, Data Structures, DBMS, SQL, and Software Engineering."
+    },
+    {
+      "type": "leadership",
+      "role": "Hackathon Team Leader",
+      "organization": "Vivek College of Commerce",
+      "period": "DEC 2025",
+      "description": "Led a 3-member developer team in a 2-day hackathon (19/12/2025), coordinating full-stack web application architecture, real-time Firebase backend, and AI features."
+    },
+    {
+      "type": "leadership",
+      "role": "Lead Technical Organizer",
+      "organization": "Tech Today (Annual College Fest)",
+      "period": "2024 - PRESENT",
+      "description": "Served as lead organizer managing the IT Quiz and Photography competitions for the college's annual 'Tech Today' tech festival alongside a supporting teammate."
+    }
+  ]
+}
