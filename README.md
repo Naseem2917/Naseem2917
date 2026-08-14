@@ -1,162 +1,153 @@
-# Naseem Khan — 3D Interactive Developer Portfolio 🚀
+<div align="center">
 
-A modern, high-performance personal developer portfolio website engineered from scratch with **React 18, TypeScript 5, Vite, Tailwind CSS, Three.js, and Rapier 3D Physics**.
+  # 👨‍💻 Hi there, I'm <span style="color: #06b6d4;">Naseem Khan</span> 👋
+  ### Full-Stack Developer • AI Solutions Engineer • B.Sc. IT Scholar (9.06 CGPA)
 
-[![Live Portfolio](https://img.shields.io/badge/Live-Portfolio-06b6d4?style=for-the-badge&logo=google-chrome&logoColor=white)](https://naseem2917.github.io/Naseem2917/)
-[![GitHub](https://img.shields.io/badge/GitHub-Naseem2917-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Naseem2917)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Naseem_Khan-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/naseem2917/)
-[![Email](https://img.shields.io/badge/Email-khannaseem1704%40gmail.com-ea4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:khannaseem1704@gmail.com)
+  <p align="center">
+    Crafting high-performance web applications with modern frontend architectures, scalable cloud backends, and intelligent AI integrations.
+  </p>
 
----
+  <p align="center">
+    <a href="https://naseem2917.github.io/Naseem2917/"><img src="https://img.shields.io/badge/🌐_Live_3D_Portfolio-06b6d4?style=for-the-badge&logoColor=white" alt="Live Portfolio" /></a>
+    <a href="https://github.com/Naseem2917"><img src="https://img.shields.io/badge/GitHub-Naseem2917-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" /></a>
+    <a href="https://www.linkedin.com/in/naseem2917/"><img src="https://img.shields.io/badge/LinkedIn-Naseem_Khan-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
+    <a href="mailto:khannaseem1704@gmail.com"><img src="https://img.shields.io/badge/Email-khannaseem1704%40gmail.com-ea4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" /></a>
+  </p>
 
-## 🌟 Key Features
-
-- 🌐 **Interactive 3D Hero Scene**: High-performance Three.js + React Three Fiber cyber core with orbital glowing rings, floating geometry, and mouse-parallax rotation. Features **Smart Viewport Throttling** (0% idle GPU when off-screen).
-- ⚽ **3D Glossy Physics Tech Stack Spheres**: Powered by `@react-three/rapier` 3D physics engine. Real-time gravity, boundary collisions, double-sided official vector logos, and interactive mouse-push repulsion.
-- 🔄 **Scroll-Driven Horizontal Projects Gallery**: Sticky-pin horizontal side-scrolling driven naturally by vertical mouse wheel scrolling with uncut 16:9 widescreen mockup displays.
-- ⚡ **Dynamic Scroll-Following Laser Arrow Timeline**: Real-time laser light beam and glowing arrow that follows the user's scroll progression across academic and leadership milestones.
-- 💡 **Dynamic Cursor Spotlight & Glow**: Hardware-accelerated radial spotlight tracking cursor coordinates with smooth lerping.
-- 🛡️ **Zero-Crash WebGL Architecture**: Wrapped with isolated error boundaries and WebGL context restoration to prevent blank screens on any device.
-- 📱 **Full-Bleed Widescreen Glassmorphism**: Responsive edge-to-edge UI with cyber-dark aesthetics (`#08090d`), electric cyan (`#06b6d4`), and ultraviolet (`#8b5cf6`) accents.
+</div>
 
 ---
 
-## 👨‍💻 About Me
+## ⚡ About Me
 
-- **Name**: Naseem Khan (Naseem Ahmad Shamiulla Khan)
-- **Role**: Full-Stack Developer & Software Engineer
-- **Education**: Bachelor of Science in Information Technology (B.Sc. IT), Semester 5
-- **Institution**: GES Shri Bhausaheb Vartak College (University of Mumbai)
-- **Academic Performance**:
-  - **Semester 4 SGPA**: **9.27 / 10.00** (88.00% Grade O)
-  - **Cumulative CGPA**: **9.06** (Grade O)
-  - *Semester 3: 9.00 SGPA | Semester 2: 9.09 SGPA | Semester 1: 8.90 SGPA*
-- **Location**: Mumbai, Maharashtra, India
-- **Email**: [khannaseem1704@gmail.com](mailto:khannaseem1704@gmail.com)
-- **Phone**: [+91 8169045425](tel:+918169045425)
+- 🎓 **B.Sc. Information Technology (Semester 5)** at **GES Shri Bhausaheb Vartak College (University of Mumbai)**.
+- 🏆 **Academic Distinction**:
+  - **Cumulative CGPA: 9.06 (Grade 'O')**
+  - **Semester 4 SGPA: 9.27 / 10.00** *(Sem 3: 9.00 | Sem 2: 9.09 | Sem 1: 8.90)*
+- 🥇 **Hackathon Team Leader**: Led a 3-member engineering team at Vivek College of Commerce Hackathon (DEC 2025) building full-stack real-time AI solutions.
+- 🚀 **Lead Technical Organizer**: Headed the IT Quiz and Photography technical competitions for the annual college tech festival *Tech Today*.
+- 📍 **Location**: Mumbai, Maharashtra, India.
+- 💼 **Status**: Available for Full-Time Software Engineering Roles & High-Impact Projects.
 
 ---
 
-## 🛠️ Technology Stack
+## 🛠️ Tech Stack & Arsenal
 
-| Category | Technologies |
-| :--- | :--- |
-| **Frontend Core** | React 18, TypeScript 5, Vite 5, Tailwind CSS 3.4, PostCSS |
-| **3D Graphics & Physics** | Three.js, `@react-three/fiber`, `@react-three/drei`, `@react-three/rapier` |
-| **Icons & Micro-Interactions** | Lucide React, Canvas Confetti |
-| **Backend & Cloud** | Firebase (Cloud Firestore, Authentication, Hosting), Cloudflare Workers, Node.js |
-| **Database & Systems** | MySQL, SQL, Relational Database Management (DBMS), Data Structures & Algorithms |
-| **Languages** | TypeScript, JavaScript (ES6+), Python, Java, C++, C |
-| **Tooling & DevOps** | Git, GitHub, VS Code, Postman, npm |
+<div align="center">
+
+### 💻 Languages
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
+![C++](https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)
+![SQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+
+### ⚛️ Frontend & 3D Web
+![React](https://img.shields.io/badge/React_18%2F19-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Three.js](https://img.shields.io/badge/Three.js-000000?style=for-the-badge&logo=three.js&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=FFD62E)
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white)
+
+### ☁️ Cloud, Backend & AI
+![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black)
+![Cloud Firestore](https://img.shields.io/badge/Firestore-FFCA28?style=for-the-badge&logo=firebase&logoColor=black)
+![Google Gemini AI](https://img.shields.io/badge/Gemini_AI-8E75B2?style=for-the-badge&logo=google&logoColor=white)
+![Cloudflare Workers](https://img.shields.io/badge/Cloudflare_Workers-F38020?style=for-the-badge&logo=cloudflare&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
+
+### 🔧 Tools & Workflow
+![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
+![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
+![VS Code](https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white)
+![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)
+
+</div>
 
 ---
 
 ## 📂 Featured Projects
 
-### 1. **AI Code Typer**
-*Interactive Coding-Typing Platform with Google Gemini AI*
-- **Repository**: [github.com/Naseem2917/ai-code-typer](https://github.com/Naseem2917/ai-code-typer)
-- **Live Demo**: [naseem2917.github.io/ai-code-typer](https://naseem2917.github.io/ai-code-typer/)
-- **Tech Stack**: React, TypeScript, Firebase, Google Gemini API, Vite, Tailwind CSS, Recharts, Cloudflare Workers
-- **Highlights**: AI-generated coding practice, cloud sync, WPM performance metrics, difficulty badges, and serverless Cloudflare proxy architecture.
-
-### 2. **Smart Complaint Box**
-*AI-Powered Public Complaint Management System (Team Lead)*
-- **Repository**: [github.com/Naseem2917/Smart-Complaint-Box](https://github.com/Naseem2917/Smart-Complaint-Box)
-- **Live Demo**: [smart-complaint-box-2025.web.app](https://smart-complaint-box-2025.web.app/)
-- **Tech Stack**: React 19, TypeScript, Firebase, Cloud Firestore, Google Gemini API, Tailwind CSS, Recharts
-- **Highlights**: AI priority triage & sentiment analysis, petition-style group complaints, real-time status tracking, and admin analytics dashboard.
-
-### 3. **WhatsApp Clone**
-*Real-Time AI-Assisted Messaging Platform (Team Lead)*
-- **Repository**: [github.com/Naseem2917/WhatsApp](https://github.com/Naseem2917/WhatsApp)
-- **Live Demo**: [whatsapp-hackthon.web.app](https://whatsapp-hackthon.web.app/)
-- **Tech Stack**: React, TypeScript, Firebase, Cloud Firestore, Google Gemini API, Tailwind CSS, Vite
-- **Highlights**: Real-time messaging, typing indicators, Google Gemini AI message rewriting, trip planning recommendations, and emoji reactions.
+<table>
+  <tr>
+    <td width="50%">
+      <h3 align="center"><b>01. AI Code Typer</b></h3>
+      <p align="center"><i>Interactive Coding-Typing Platform with Gemini AI</i></p>
+      <p>Interactive coding mastery platform with Google Gemini AI practice generation, cloud sync, WPM performance analytics, difficulty levels, achievement badges, and Cloudflare Worker proxy architecture.</p>
+      <p align="center">
+        <b>Tech Stack:</b> React • TypeScript • Firebase • Gemini API • Tailwind • Recharts
+      </p>
+      <p align="center">
+        <a href="https://github.com/Naseem2917/ai-code-typer"><b>💻 Source Code</b></a> | 
+        <a href="https://naseem2917.github.io/ai-code-typer/"><b>🚀 Live Demo</b></a>
+      </p>
+    </td>
+    <td width="50%">
+      <h3 align="center"><b>02. Smart Complaint Box</b></h3>
+      <p align="center"><i>AI-Powered Grievance Management System (Team Lead)</i></p>
+      <p>Intelligent grievance resolution system with AI complaint classification & priority triage, invalid text filter, petition-style group complaints with supporting signatures, real-time tracking, and administrative dashboard.</p>
+      <p align="center">
+        <b>Tech Stack:</b> React 19 • TypeScript • Firebase • Firestore • Gemini API • Tailwind
+      </p>
+      <p align="center">
+        <a href="https://github.com/Naseem2917/Smart-Complaint-Box"><b>💻 Source Code</b></a> | 
+        <a href="https://smart-complaint-box-2025.web.app/"><b>🚀 Live Demo</b></a>
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2">
+      <h3 align="center"><b>03. WhatsApp Clone</b></h3>
+      <p align="center"><i>Real-Time AI-Assisted Messaging Platform (Team Lead)</i></p>
+      <p>Real-time chat platform with Firestore backend, live typing indicators, Google Gemini AI message rewriting, trip planning recommendations, smart reply suggestions, emoji reactions, media sharing, and scheduled messaging.</p>
+      <p align="center">
+        <b>Tech Stack:</b> React • TypeScript • Firebase • Firestore • Gemini API • Tailwind • Vite
+      </p>
+      <p align="center">
+        <a href="https://github.com/Naseem2917/WhatsApp"><b>💻 Source Code</b></a> | 
+        <a href="https://whatsapp-hackthon.web.app/"><b>🚀 Live Demo</b></a>
+      </p>
+    </td>
+  </tr>
+</table>
 
 ---
 
-## 🏆 Education & Leadership Timeline
-
-- 🎓 **B.Sc. Information Technology (2024 - 2027)** — *GES Shri Bhausaheb Vartak College (Univ. of Mumbai)*
-  - Pursuing Semester 5. Scored 9.27 SGPA in Sem 4 with a Cumulative CGPA of 9.06 (Grade O).
-- 🥇 **Hackathon Team Leader (DEC 2025)** — *Vivek College of Commerce*
-  - Led a 3-member developer squad in an intensive 2-day hackathon building full-stack AI web applications under tight deadlines.
-- 🚀 **Lead Technical Organizer (2024 - PRESENT)** — *Tech Today Annual College Festival*
-  - Directed and managed the IT Quiz and Photography technical competitions for the flagship annual tech fest.
-
----
-
-## 📁 Project Directory Structure
+## 🏆 Key Achievements & Leadership
 
 ```
-Portfolio/
-├── public/
-│   ├── images/              # Project screenshots & mockups
-│   │   ├── ai-code-typer.jpg
-│   │   ├── smart-complaint.jpg
-│   │   └── whatsapp-clone.jpg
-│   └── tech/                # Official high-resolution SVG tech logos
-│       ├── react.svg, typescript.svg, python.svg, java.svg...
-├── src/
-│   ├── components/
-│   │   ├── common/          # CanvasErrorBoundary
-│   │   ├── effects/         # CursorGlow
-│   │   ├── layout/          # Navbar, Footer
-│   │   ├── hero/            # Hero, Hero3DScene
-│   │   ├── about/           # About
-│   │   ├── skills/          # TechStack, TechStack3DPhysics, techTextures
-│   │   ├── projects/        # Projects (Horizontal Pin-Scroll)
-│   │   ├── experience/      # ExperienceTimeline (Scroll-Following Laser Arrow)
-│   │   └── contact/         # Contact Hub
-│   ├── data/                # portfolioData.ts
-│   ├── types/               # TypeScript interfaces
-│   ├── App.tsx
-│   ├── main.tsx
-│   └── index.css            # Tailwind & Cyber design system
-├── index.html
-├── package.json
-├── tailwind.config.js
-├── tsconfig.json
-└── vite.config.ts
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ 🎓 9.06 Cumulative CGPA (Grade O) | B.Sc. IT, Univ. of Mumbai               │
+│ 🥇 Hackathon Team Leader | Vivek College of Commerce (DEC 2025)             │
+│ 🚀 Lead Technical Organizer | Tech Today Annual Tech Fest (2024 - Present)  │
+│ 💻 3+ Production-Grade Full-Stack AI Web Applications                       │
+└─────────────────────────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-## 🚀 Getting Started (Local Development)
+## 📊 GitHub Profile Highlights
 
-### Prerequisites
-- Node.js (v18.0.0 or higher)
-- npm or yarn
-
-### Installation
-
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/Naseem2917/Naseem2917.git
-   cd Naseem2917
-   ```
-
-2. **Install dependencies:**
-   ```bash
-   npm install
-   ```
-
-3. **Start the local development server:**
-   ```bash
-   npm run dev
-   ```
-   Open [http://localhost:5173](http://localhost:5173) in your browser.
-
-4. **Build for production:**
-   ```bash
-   npm run build
-   ```
+<div align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=Naseem2917&show_icons=true&theme=tokyonight&hide_border=true&bg_color=08090d&title_color=06b6d4&text_color=cbd5e1" alt="Naseem's GitHub Stats" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Naseem2917&layout=compact&theme=tokyonight&hide_border=true&bg_color=08090d&title_color=8b5cf6&text_color=cbd5e1" alt="Top Languages" />
+</div>
 
 ---
 
-## 📄 License
+## 📬 Connect With Me
 
-This project is licensed under the **MIT License** — free to use, modify, and build upon.
+<div align="center">
 
-Copyright © 2026 **Naseem Khan**. All rights reserved.
+  [![LinkedIn](https://img.shields.io/badge/LinkedIn-Naseem_Khan-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/naseem2917/)
+  [![GitHub](https://img.shields.io/badge/GitHub-Naseem2917-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Naseem2917)
+  [![Email](https://img.shields.io/badge/Email-khannaseem1704%40gmail.com-ea4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:khannaseem1704@gmail.com)
+  [![Phone](https://img.shields.io/badge/Phone-+91_8169045425-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](tel:+918169045425)
+
+  <br />
+  <sub>Designed & Engineered with ❤️ by <b>Naseem Khan</b> • 100% Original Code</sub>
+
+</div>
