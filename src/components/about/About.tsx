@@ -1,108 +1,100 @@
 import React from 'react';
-import { GraduationCap, Users, Rocket, Terminal } from 'lucide-react';
+import { Terminal, CheckCircle2, ArrowRight } from 'lucide-react';
 import { portfolioData } from '../../data/portfolioData';
 
 export const About: React.FC = () => {
   return (
-    <section id="about" className="py-20 relative overflow-hidden">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="about" className="py-24 relative overflow-hidden">
+      <div className="w-full max-w-[1550px] mx-auto px-6 sm:px-12 lg:px-16">
         
-        {/* Section Header */}
-        <div className="flex flex-col items-center text-center mb-14">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-mono mb-3">
+        {/* Section Pill & Title */}
+        <div className="flex flex-col items-start mb-12">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-mono mb-4">
             <Terminal className="w-3.5 h-3.5" />
             <span>01 // ABOUT ME</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-display font-bold text-white tracking-tight">
-            Engineering Web Excellence & <span className="text-gradient">AI Solutions</span>
+          <h2 className="text-4xl sm:text-5xl font-display font-extrabold text-white tracking-tight">
+            Engineering Web Systems with <span className="text-gradient">Precision & Speed</span>
           </h2>
-          <p className="text-slate-400 text-sm sm:text-base max-w-2xl mt-3">
-            A look into my academic journey, full-stack philosophy, and leadership experience.
-          </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+        {/* Clean, Non-Messy Widescreen Bio Card */}
+        <div className="glass-panel rounded-3xl p-8 sm:p-12 border-surface-border relative overflow-hidden bg-surface/50">
           
-          {/* Main Bio Card */}
-          <div className="lg:col-span-7 glass-panel p-6 sm:p-8 rounded-2xl flex flex-col justify-between border-surface-border">
-            <div>
+          {/* Subtle Ambient Background Gradient */}
+          <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full filter blur-[100px] pointer-events-none -z-10" />
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            
+            {/* Left: Bio Narrative */}
+            <div className="lg:col-span-8 flex flex-col justify-center">
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary font-bold text-lg font-mono">
-                  NK
+                <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-primary to-secondary p-[1px] shadow-lg shadow-primary/20">
+                  <div className="w-full h-full bg-background rounded-[15px] flex items-center justify-center text-primary font-bold text-base font-mono">
+                    NK
+                  </div>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-white">Naseem Khan</h3>
-                  <p className="text-xs font-mono text-primary">Full-Stack Developer & B.Sc. IT Scholar</p>
+                  <h3 className="text-2xl font-bold text-white flex items-center gap-2">
+                    {portfolioData.personal.name}
+                    <span className="w-2 h-2 rounded-full bg-emerald-400" />
+                  </h3>
+                  <p className="text-xs font-mono text-primary">Full-Stack Developer & Software Engineer</p>
                 </div>
               </div>
 
-              <p className="text-slate-300 text-sm sm:text-base leading-relaxed mb-6 font-normal">
+              <p className="text-slate-200 text-base sm:text-lg leading-relaxed mb-6 font-normal">
                 {portfolioData.about.summary}
               </p>
 
-              <p className="text-slate-400 text-sm leading-relaxed">
-                My approach combines strong computer science fundamentals—data structures, system design, and algorithms—with cutting-edge modern tooling like React 18/19, TypeScript, real-time Firebase backends, and serverless Cloudflare Workers.
+              <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
+                I specialize in architecting responsive React/TypeScript frontend interfaces with high-performance WebGL/Three.js interactivity, integrated with real-time Firebase backends and serverless Cloudflare Worker proxy pipelines.
               </p>
-            </div>
 
-            <div className="mt-8 pt-6 border-t border-surface-border grid grid-cols-2 sm:grid-cols-3 gap-4">
-              <div>
-                <span className="text-xs font-mono text-slate-400">Current Semester</span>
-                <p className="text-base font-bold text-white">Semester 5 (IT)</p>
-              </div>
-              <div>
-                <span className="text-xs font-mono text-slate-400">Semester 4 Score</span>
-                <p className="text-base font-bold text-primary">9.27 SGPA</p>
-              </div>
-              <div>
-                <span className="text-xs font-mono text-slate-400">Overall Grade</span>
-                <p className="text-base font-bold text-emerald-400">Grade 'O' (9.06)</p>
-              </div>
-            </div>
-          </div>
+              <div className="mt-8 flex flex-wrap items-center gap-4">
+                <a
+                  href="#experience"
+                  className="inline-flex items-center gap-2 text-xs font-mono text-primary hover:text-white transition-colors bg-primary/10 border border-primary/20 px-4 py-2 rounded-xl"
+                >
+                  <span>View Timeline & Leadership</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </a>
 
-          {/* Right Highlights Cards */}
-          <div className="lg:col-span-5 flex flex-col gap-4">
-            
-            <div className="glass-panel p-5 rounded-2xl border-surface-border hover:border-primary/40 transition-all group">
-              <div className="flex items-start gap-4">
-                <div className="p-3 rounded-xl bg-primary/10 border border-primary/20 text-primary group-hover:scale-110 transition-transform">
-                  <GraduationCap className="w-5 h-5" />
-                </div>
-                <div>
-                  <h4 className="text-base font-bold text-white mb-1">Academic Distinction</h4>
-                  <p className="text-xs text-slate-300 leading-relaxed">
-                    Maintained a consistent 9.06 CGPA with Grade O across B.Sc. IT curriculum at GES Shri Bhausaheb Vartak College (University of Mumbai).
-                  </p>
-                </div>
+                <a
+                  href="#skills"
+                  className="inline-flex items-center gap-2 text-xs font-mono text-secondary hover:text-white transition-colors bg-secondary/10 border border-secondary/20 px-4 py-2 rounded-xl"
+                >
+                  <span>Explore 3D Tech Arsenal</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </a>
               </div>
             </div>
 
-            <div className="glass-panel p-5 rounded-2xl border-surface-border hover:border-secondary/40 transition-all group">
-              <div className="flex items-start gap-4">
-                <div className="p-3 rounded-xl bg-secondary/10 border border-secondary/20 text-secondary group-hover:scale-110 transition-transform">
-                  <Users className="w-5 h-5" />
-                </div>
-                <div>
-                  <h4 className="text-base font-bold text-white mb-1">Hackathon Team Leadership</h4>
-                  <p className="text-xs text-slate-300 leading-relaxed">
-                    Led a 3-member engineering squad at Vivek College of Commerce Hackathon to develop a complete full-stack real-time AI system under tight deadlines.
-                  </p>
-                </div>
+            {/* Right: Clean Key Stats Banner */}
+            <div className="lg:col-span-4 flex flex-col gap-4">
+              <div className="p-6 rounded-2xl bg-surface-light/60 border border-white/5 flex flex-col">
+                <span className="text-xs font-mono text-slate-400 uppercase tracking-wider mb-1">Academic Grade</span>
+                <span className="text-3xl font-extrabold font-display text-emerald-400 flex items-center gap-2">
+                  9.06 CGPA
+                  <CheckCircle2 className="w-5 h-5 text-emerald-400" />
+                </span>
+                <span className="text-xs text-slate-400 mt-1">Grade 'O' • Semester 4: 9.27 SGPA</span>
               </div>
-            </div>
 
-            <div className="glass-panel p-5 rounded-2xl border-surface-border hover:border-emerald-500/40 transition-all group">
-              <div className="flex items-start gap-4">
-                <div className="p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 group-hover:scale-110 transition-transform">
-                  <Rocket className="w-5 h-5" />
-                </div>
-                <div>
-                  <h4 className="text-base font-bold text-white mb-1">Tech Fest Event Head</h4>
-                  <p className="text-xs text-slate-300 leading-relaxed">
-                    Directed and organized the IT Quiz and Photography technical competitions for 'Tech Today', managing multi-tier student participants.
-                  </p>
-                </div>
+              <div className="p-6 rounded-2xl bg-surface-light/60 border border-white/5 flex flex-col">
+                <span className="text-xs font-mono text-slate-400 uppercase tracking-wider mb-1">Current Degree</span>
+                <span className="text-xl font-bold text-white">
+                  B.Sc. Information Tech
+                </span>
+                <span className="text-xs text-slate-400 mt-1">GES Shri Bhausaheb Vartak College (Univ. of Mumbai)</span>
+              </div>
+
+              <div className="p-6 rounded-2xl bg-surface-light/60 border border-white/5 flex flex-col">
+                <span className="text-xs font-mono text-slate-400 uppercase tracking-wider mb-1">Development Focus</span>
+                <span className="text-lg font-bold text-cyan-300">
+                  Full-Stack & AI Engineering
+                </span>
+                <span className="text-xs text-slate-400 mt-1">Production Web Apps & Team Leadership</span>
               </div>
             </div>
 

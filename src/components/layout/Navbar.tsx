@@ -40,9 +40,9 @@ export const Navbar: React.FC = () => {
   }, []);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-40 transition-all duration-300 px-4 sm:px-6 lg:px-8 py-4">
+    <header className="fixed top-0 left-0 right-0 z-40 transition-all duration-300 px-4 sm:px-8 lg:px-12 py-4">
       <div
-        className={`max-w-6xl mx-auto rounded-2xl transition-all duration-300 px-4 sm:px-6 py-3 flex items-center justify-between ${
+        className={`max-w-[1700px] mx-auto rounded-2xl transition-all duration-300 px-6 sm:px-8 py-3.5 flex items-center justify-between ${
           isScrolled
             ? 'glass-panel border-surface-border shadow-2xl bg-surface/85 backdrop-blur-xl'
             : 'bg-surface/30 backdrop-blur-md border border-white/5'

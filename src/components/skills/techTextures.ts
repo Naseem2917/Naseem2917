@@ -1,47 +1,54 @@
 import * as THREE from 'three';
 
-// Generates high-res crisp branded textures on HTML5 canvas for 3D physics spheres
+// Generates high-res crisp branded textures with Front & Back logos on HTML5 canvas
 export function createTechTexture(name: string, symbol: string, color: string, bgColor = '#ffffff'): THREE.CanvasTexture {
-  const size = 512;
+  const width = 1024;
+  const height = 512;
   const canvas = document.createElement('canvas');
-  canvas.width = size;
-  canvas.height = size;
+  canvas.width = width;
+  canvas.height = height;
   const ctx = canvas.getContext('2d')!;
 
   // 1. Glossy White Spherical Background
   ctx.fillStyle = bgColor;
-  ctx.fillRect(0, 0, size, size);
+  ctx.fillRect(0, 0, width, height);
 
-  // 2. Decorative Modern Tech Pattern
-  ctx.save();
-  ctx.strokeStyle = 'rgba(0, 0, 0, 0.05)';
-  ctx.lineWidth = 4;
-  ctx.beginPath();
-  ctx.arc(size / 2, size / 2, size * 0.42, 0, Math.PI * 2);
-  ctx.stroke();
-  ctx.restore();
+  // Helper function to draw branded logo badge at a given center X position
+  const drawBadge = (centerX: number) => {
+    ctx.save();
+    ctx.translate(centerX, height / 2);
 
-  // 3. Central Brand Logo & Text
-  ctx.save();
-  ctx.translate(size / 2, size / 2);
+    // Subtle ambient circular ring
+    ctx.strokeStyle = 'rgba(0, 0, 0, 0.06)';
+    ctx.lineWidth = 3;
+    ctx.beginPath();
+    ctx.arc(0, 0, 180, 0, Math.PI * 2);
+    ctx.stroke();
 
-  // Logo Icon / Symbol
-  ctx.fillStyle = color;
-  ctx.font = 'bold 110px "Space Grotesk", sans-serif';
-  ctx.textAlign = 'center';
-  ctx.textBaseline = 'middle';
-  ctx.fillText(symbol, 0, -35);
+    // Icon / Symbol
+    ctx.fillStyle = color;
+    ctx.font = 'bold 110px "Space Grotesk", sans-serif';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText(symbol, 0, -35);
 
-  // Technology Name Text
-  ctx.fillStyle = '#0f172a';
-  ctx.font = 'bold 44px "Space Grotesk", sans-serif';
-  ctx.fillText(name, 0, 60);
+    // Technology Name Text
+    ctx.fillStyle = '#0f172a';
+    ctx.font = 'bold 44px "Space Grotesk", sans-serif';
+    ctx.fillText(name, 0, 60);
 
-  // Subtle Accent Bar
-  ctx.fillStyle = color;
-  ctx.fillRect(-60, 100, 120, 8);
+    // Accent Color Underline Bar
+    ctx.fillStyle = color;
+    ctx.fillRect(-60, 100, 120, 8);
 
-  ctx.restore();
+    ctx.restore();
+  };
+
+  // 2. Draw on Front Side (Center at 25%)
+  drawBadge(width * 0.25);
+
+  // 3. Draw on Back Side (Center at 75%) so no blank white space is visible when rotating
+  drawBadge(width * 0.75);
 
   const texture = new THREE.CanvasTexture(canvas);
   texture.colorSpace = THREE.SRGBColorSpace;

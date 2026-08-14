@@ -49,7 +49,7 @@ export const Contact: React.FC = () => {
       {/* Background glow */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-primary/5 rounded-full filter blur-[140px] pointer-events-none -z-10" />
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full max-w-[1700px] mx-auto px-6 sm:px-12 lg:px-16">
         
         {/* Section Header */}
         <div className="flex flex-col items-center text-center mb-16">
