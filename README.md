@@ -129,11 +129,12 @@
 
 ---
 
-## 📊 GitHub Profile Highlights
+## 📊 GitHub Profile Highlights & Activity
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=Naseem2917&show_icons=true&theme=tokyonight&hide_border=true&bg_color=08090d&title_color=06b6d4&text_color=cbd5e1" alt="Naseem's GitHub Stats" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Naseem2917&layout=compact&theme=tokyonight&hide_border=true&bg_color=08090d&title_color=8b5cf6&text_color=cbd5e1" alt="Top Languages" />
+  <img src="https://streak-stats.demolab.com/?user=Naseem2917&theme=tokyonight&hide_border=true&background=08090d&ring=06b6d4&fire=8b5cf6" alt="Naseem's GitHub Streak" />
+  <br /><br />
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Naseem2917&bg_color=08090d&color=06b6d4&line=8b5cf6&point=ffffff&hide_border=true" alt="Naseem's Contribution Graph" />
 </div>
 
 ---
