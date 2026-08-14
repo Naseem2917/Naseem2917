@@ -1,70 +1,106 @@
-import React, { useRef } from 'react';
-import { Terminal, Github, ChevronLeft, ChevronRight, ArrowUpRight } from 'lucide-react';
+import React, { useEffect, useRef, useState } from 'react';
+import { Terminal, Github, ArrowUpRight } from 'lucide-react';
 import { portfolioData } from '../../data/portfolioData';
 
 export const Projects: React.FC = () => {
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const trackRef = useRef<HTMLDivElement>(null);
+  const [scrollProgress, setScrollProgress] = useState(0);
+  const [maxScrollWidth, setMaxScrollWidth] = useState(0);
 
-  const handleScroll = (direction: 'left' | 'right') => {
-    if (scrollContainerRef.current) {
-      const offset = direction === 'left' ? -700 : 700;
-      scrollContainerRef.current.scrollBy({ left: offset, behavior: 'smooth' });
-    }
-  };
+  // Measure max horizontal scroll distance on resize
+  useEffect(() => {
+    const calculateWidth = () => {
+      if (trackRef.current) {
+        const trackWidth = trackRef.current.scrollWidth;
+        const viewportWidth = window.innerWidth;
+        setMaxScrollWidth(Math.max(trackWidth - viewportWidth + 120, 0));
+      }
+    };
+
+    calculateWidth();
+    window.addEventListener('resize', calculateWidth);
+    return () => window.removeEventListener('resize', calculateWidth);
+  }, []);
+
+  // Vertical Scroll -> Horizontal Pin Scroll
+  useEffect(() => {
+    let animFrameId: number;
+
+    const handleScroll = () => {
+      if (!sectionRef.current) return;
+      const rect = sectionRef.current.getBoundingClientRect();
+      const totalScrollableDistance = sectionRef.current.offsetHeight - window.innerHeight;
+
+      if (totalScrollableDistance <= 0) return;
+
+      const currentScroll = -rect.top;
+      const progress = Math.min(Math.max(currentScroll / totalScrollableDistance, 0), 1);
+      setScrollProgress(progress);
+    };
+
+    const onScroll = () => {
+      cancelAnimationFrame(animFrameId);
+      animFrameId = requestAnimationFrame(handleScroll);
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    handleScroll();
+
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      cancelAnimationFrame(animFrameId);
+    };
+  }, []);
 
   return (
-    <section id="projects" className="py-24 relative overflow-hidden">
-      <div className="w-full max-w-[1700px] mx-auto px-6 sm:px-12 lg:px-16">
+    <section
+      id="projects"
+      ref={sectionRef}
+      className="relative min-h-[300vh] bg-background"
+    >
+      {/* Sticky Pin Container: Locks in viewport while scrolling horizontally */}
+      <div className="sticky top-0 h-screen w-full flex flex-col justify-center overflow-hidden px-6 sm:px-12 lg:px-16">
         
-        {/* Section Header with Navigation Controls */}
-        <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-6 mb-12">
-          <div>
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-mono mb-4">
-              <Terminal className="w-3.5 h-3.5" />
-              <span>03 // SELECTED WORKS</span>
-            </div>
-            <h2 className="text-4xl sm:text-6xl font-display font-extrabold text-white tracking-tight">
+        {/* Section Header */}
+        <div className="w-full max-w-[1700px] mx-auto mb-6 flex-shrink-0">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-mono mb-2">
+            <Terminal className="w-3.5 h-3.5" />
+            <span>03 // FEATURED PROJECTS</span>
+          </div>
+          <div className="flex items-center justify-between">
+            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-display font-extrabold text-white tracking-tight">
               Featured <span className="text-gradient">Projects</span>
             </h2>
-          </div>
 
-          {/* Horizontal Navigation Buttons */}
-          <div className="flex items-center gap-3">
-            <button
-              onClick={() => handleScroll('left')}
-              className="p-3.5 rounded-2xl bg-surface border border-surface-border hover:border-primary/50 text-slate-300 hover:text-white transition-all active:scale-95 shadow-lg"
-              title="Scroll Left"
-            >
-              <ChevronLeft className="w-5 h-5" />
-            </button>
-            <button
-              onClick={() => handleScroll('right')}
-              className="p-3.5 rounded-2xl bg-surface border border-surface-border hover:border-primary/50 text-slate-300 hover:text-white transition-all active:scale-95 shadow-lg"
-              title="Scroll Right"
-            >
-              <ChevronRight className="w-5 h-5" />
-            </button>
+            {/* Scroll Indicator Pill */}
+            <div className="hidden sm:flex items-center gap-2 px-4 py-1.5 rounded-full bg-surface-light/60 border border-white/5 text-xs font-mono text-slate-400">
+              <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+              <span>Scroll Down to Slide ({Math.round(scrollProgress * 100)}%)</span>
+            </div>
           </div>
         </div>
 
-        {/* Wide Horizontal Side-Scrolling Track */}
+        {/* Horizontal Sliding Track (Driven by Vertical Wheel Scroll) */}
         <div
-          ref={scrollContainerRef}
-          className="flex gap-8 overflow-x-auto pb-8 pt-2 scrollbar-none snap-x snap-mandatory scroll-smooth cursor-grab active:cursor-grabbing"
-          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          ref={trackRef}
+          className="flex gap-8 items-center will-change-transform transition-transform duration-75 ease-out w-max"
+          style={{
+            transform: `translate3d(-${scrollProgress * maxScrollWidth}px, 0, 0)`,
+          }}
         >
           {portfolioData.projects.map((project, index) => (
             <div
               key={project.id}
-              className="min-w-[88vw] sm:min-w-[700px] md:min-w-[850px] lg:min-w-[1020px] snap-center glass-panel rounded-3xl p-8 sm:p-10 border-surface-border hover:border-primary/40 transition-all duration-300 flex flex-col lg:flex-row items-center gap-8 group"
+              className="w-[90vw] sm:w-[780px] md:w-[940px] lg:w-[1150px] flex-shrink-0 glass-panel rounded-3xl p-6 sm:p-10 border-surface-border hover:border-primary/40 transition-all duration-300 flex flex-col lg:flex-row items-center gap-8 group shadow-2xl bg-surface/80"
             >
               
-              {/* Left Column: Project Info (Matching User's Screenshot Layout) */}
-              <div className="w-full lg:w-1/2 flex flex-col justify-between self-stretch">
+              {/* Left Column: Project Details (Matching User's Screenshot) */}
+              <div className="w-full lg:w-[45%] flex flex-col justify-between self-stretch">
                 <div>
                   
                   {/* Big Number & Subtitle */}
-                  <div className="flex items-baseline justify-between mb-4">
+                  <div className="flex items-baseline justify-between mb-3">
                     <span className="text-5xl sm:text-6xl font-display font-black text-slate-100 group-hover:text-primary transition-colors">
                       0{index + 1}
                     </span>
@@ -74,7 +110,7 @@ export const Projects: React.FC = () => {
                     </div>
                   </div>
 
-                  {/* Tools & Features */}
+                  {/* Tools & Features Header */}
                   <div className="mb-4">
                     <h5 className="text-xs font-mono uppercase tracking-wider text-primary font-bold mb-1.5">
                       Tools & Features
@@ -92,7 +128,7 @@ export const Projects: React.FC = () => {
                 </div>
 
                 {/* Direct Action Links */}
-                <div className="flex items-center gap-6 pt-4 border-t border-surface-border">
+                <div className="flex items-center gap-6 pt-4 border-t border-surface-border mt-auto">
                   <a
                     href={project.githubUrl}
                     target="_blank"
@@ -119,12 +155,12 @@ export const Projects: React.FC = () => {
 
               </div>
 
-              {/* Right Column: Wide High-Res Mockup Image */}
-              <div className="w-full lg:w-1/2 h-64 sm:h-80 md:h-96 rounded-2xl overflow-hidden bg-surface-light border border-surface-border relative group-hover:border-primary/30 transition-colors shadow-2xl">
+              {/* Right Column: Full Widescreen 16:9 / 16:10 Mockup (NO UNCROP / NO 1:1 SQUISH) */}
+              <div className="w-full lg:w-[55%] aspect-[16/10] sm:aspect-[16/9] max-h-[360px] sm:max-h-[420px] rounded-2xl overflow-hidden bg-surface-light border border-surface-border relative group-hover:border-primary/40 transition-colors shadow-2xl flex items-center justify-center p-2">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                  className="w-full h-full object-contain rounded-xl group-hover:scale-[1.02] transition-transform duration-500"
                   loading="lazy"
                   onError={(e) => {
                     const target = e.currentTarget;
@@ -134,7 +170,6 @@ export const Projects: React.FC = () => {
                     }
                   }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-surface/60 via-transparent to-transparent pointer-events-none" />
               </div>
 
             </div>

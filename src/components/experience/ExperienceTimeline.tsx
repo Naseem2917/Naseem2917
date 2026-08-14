@@ -1,11 +1,46 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Terminal, GraduationCap, Users, CheckCircle2, ArrowDown, Sparkles } from 'lucide-react';
 import { portfolioData } from '../../data/portfolioData';
 
 export const ExperienceTimeline: React.FC = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [arrowProgress, setArrowProgress] = useState(0);
+
+  // Dynamic Scroll-Following Arrow Logic
+  useEffect(() => {
+    let animFrameId: number;
+
+    const updateArrowPosition = () => {
+      if (!containerRef.current) return;
+      const rect = containerRef.current.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+
+      // Start when top of timeline enters middle of viewport, finish when bottom reaches middle
+      const startOffset = windowHeight * 0.45;
+      const totalDistance = rect.height;
+      const currentDistance = startOffset - rect.top;
+
+      const progress = Math.min(Math.max(currentDistance / totalDistance, 0), 1);
+      setArrowProgress(progress);
+    };
+
+    const handleScroll = () => {
+      cancelAnimationFrame(animFrameId);
+      animFrameId = requestAnimationFrame(updateArrowPosition);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    updateArrowPosition();
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      cancelAnimationFrame(animFrameId);
+    };
+  }, []);
+
   return (
     <section id="experience" className="py-24 relative overflow-hidden bg-surface/20">
-      <div className="w-full max-w-[1550px] mx-auto px-6 sm:px-12 lg:px-16">
+      <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-12 lg:px-16">
         
         {/* Section Header */}
         <div className="flex flex-col items-start mb-16">
@@ -21,31 +56,40 @@ export const ExperienceTimeline: React.FC = () => {
           </p>
         </div>
 
-        {/* Timeline with Animated Glowing Arrow Light Beam */}
-        <div className="relative pl-8 sm:pl-16 ml-2 sm:ml-6 space-y-12">
+        {/* Timeline Container */}
+        <div ref={containerRef} className="relative pl-8 sm:pl-16 ml-2 sm:ml-6 space-y-12 min-h-[600px]">
           
           {/* Base Vertical Timeline Track */}
-          <div className="absolute left-0 top-3 bottom-3 w-[3px] bg-surface-border" />
+          <div className="absolute left-0 top-3 bottom-3 w-[3px] bg-surface-border rounded-full" />
 
-          {/* Animated Flowing Laser / Light Beam with Arrow Effect */}
-          <div className="absolute left-0 top-0 bottom-0 w-[3px] overflow-hidden pointer-events-none">
-            <div className="w-full h-40 bg-gradient-to-b from-transparent via-primary to-transparent animate-pulse-slow will-change-transform" />
-          </div>
+          {/* Active Flowing Laser Beam (Height scales with scroll) */}
+          <div
+            className="absolute left-0 top-3 w-[3px] bg-gradient-to-b from-primary via-cyan-400 to-secondary rounded-full shadow-[0_0_12px_rgba(6,182,212,0.8)] transition-all duration-75 ease-out"
+            style={{ height: `${arrowProgress * 100}%` }}
+          />
 
-          {/* Top Starting Arrow Indicator */}
-          <div className="absolute -left-[14px] top-0 w-8 h-8 rounded-full bg-primary/20 border-2 border-primary flex items-center justify-center text-primary shadow-lg shadow-primary/50 animate-bounce">
-            <ArrowDown className="w-4 h-4" />
+          {/* DYNAMIC MOVING ARROW LIGHT (Scroll-following pointer) */}
+          <div
+            className="absolute -left-[18px] w-10 h-10 rounded-full bg-surface border-2 border-primary flex items-center justify-center text-primary shadow-[0_0_20px_rgba(6,182,212,0.8)] transition-all duration-100 ease-out z-20 will-change-transform"
+            style={{
+              top: `calc(${arrowProgress * 100}% + 4px)`,
+              transform: 'translateY(-50%)',
+            }}
+          >
+            <div className="w-full h-full rounded-full bg-primary/20 flex items-center justify-center">
+              <ArrowDown className="w-5 h-5 text-cyan-300 animate-bounce" />
+            </div>
           </div>
 
           {portfolioData.experience_and_education.map((item, index) => (
             <div key={index} className="relative group">
               
-              {/* Timeline Glowing Node with Arrow Light Icon */}
-              <div className="absolute -left-[45px] sm:-left-[77px] top-4 w-9 h-9 rounded-2xl bg-surface border-2 border-primary group-hover:border-secondary flex items-center justify-center transition-all duration-300 shadow-xl shadow-primary/30 group-hover:scale-110">
+              {/* Timeline Static Milestone Node */}
+              <div className="absolute -left-[45px] sm:-left-[77px] top-4 w-9 h-9 rounded-2xl bg-surface border-2 border-surface-border group-hover:border-primary flex items-center justify-center transition-all duration-300 shadow-xl group-hover:scale-110 z-10">
                 {item.type === 'education' ? (
-                  <GraduationCap className="w-4 h-4 text-primary group-hover:text-secondary transition-colors" />
+                  <GraduationCap className="w-4 h-4 text-slate-400 group-hover:text-primary transition-colors" />
                 ) : (
-                  <Users className="w-4 h-4 text-secondary group-hover:text-primary transition-colors" />
+                  <Users className="w-4 h-4 text-slate-400 group-hover:text-secondary transition-colors" />
                 )}
               </div>
 
@@ -90,11 +134,6 @@ export const ExperienceTimeline: React.FC = () => {
 
             </div>
           ))}
-
-          {/* Bottom Termination Arrow Indicator */}
-          <div className="absolute -left-[14px] bottom-0 w-8 h-8 rounded-full bg-secondary/20 border-2 border-secondary flex items-center justify-center text-secondary shadow-lg shadow-secondary/50">
-            <ArrowDown className="w-4 h-4" />
-          </div>
 
         </div>
 

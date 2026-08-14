@@ -2,7 +2,7 @@ import React, { useRef, useMemo, useState, useEffect, Suspense } from 'react';
 import * as THREE from 'three';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Physics, RigidBody, BallCollider, RapierRigidBody } from '@react-three/rapier';
-import { createTechTexture, TECH_BADGES } from './techTextures';
+import { createOfficialTechTexture, TECH_BADGES } from './techTextures';
 import { CanvasErrorBoundary } from '../common/CanvasErrorBoundary';
 import { Sparkles, MousePointer, RotateCcw } from 'lucide-react';
 
@@ -116,7 +116,7 @@ export const TechStack3DPhysics: React.FC = () => {
   // Pre-generate materials with crisp vector textures
   const materials = useMemo(() => {
     return TECH_BADGES.map((badge) => {
-      const tex = createTechTexture(badge.name, badge.symbol, badge.color);
+      const tex = createOfficialTechTexture(badge);
       return new THREE.MeshStandardMaterial({
         map: tex,
         roughness: 0.15,

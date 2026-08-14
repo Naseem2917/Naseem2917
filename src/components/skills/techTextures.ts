@@ -1,7 +1,30 @@
 import * as THREE from 'three';
 
-// Generates high-res crisp branded textures with Front & Back logos on HTML5 canvas
-export function createTechTexture(name: string, symbol: string, color: string, bgColor = '#ffffff'): THREE.CanvasTexture {
+export interface TechBadgeConfig {
+  name: string;
+  svgPath: string;
+  color: string;
+}
+
+export const TECH_BADGES: TechBadgeConfig[] = [
+  { name: 'Python', svgPath: `${import.meta.env.BASE_URL}tech/python.svg`, color: '#387eb8' },
+  { name: 'GitHub', svgPath: `${import.meta.env.BASE_URL}tech/github.svg`, color: '#181717' },
+  { name: 'Firebase', svgPath: `${import.meta.env.BASE_URL}tech/firebase.svg`, color: '#f57c00' },
+  { name: 'Java', svgPath: `${import.meta.env.BASE_URL}tech/java.svg`, color: '#e76f00' },
+  { name: 'React', svgPath: `${import.meta.env.BASE_URL}tech/react.svg`, color: '#61dafb' },
+  { name: 'TypeScript', svgPath: `${import.meta.env.BASE_URL}tech/typescript.svg`, color: '#3178c6' },
+  { name: 'Next.js', svgPath: `${import.meta.env.BASE_URL}tech/nextjs.svg`, color: '#000000' },
+  { name: 'Node.js', svgPath: `${import.meta.env.BASE_URL}tech/nodejs.svg`, color: '#339933' },
+  { name: 'Tailwind CSS', svgPath: `${import.meta.env.BASE_URL}tech/tailwind.svg`, color: '#06b6d4' },
+  { name: 'JavaScript', svgPath: `${import.meta.env.BASE_URL}tech/javascript.svg`, color: '#f7df1e' },
+  { name: 'MySQL', svgPath: `${import.meta.env.BASE_URL}tech/mysql.svg`, color: '#00758f' },
+  { name: 'Vite', svgPath: `${import.meta.env.BASE_URL}tech/vite.svg`, color: '#bd34fe' },
+  { name: 'Gemini AI', svgPath: `${import.meta.env.BASE_URL}tech/gemini.svg`, color: '#5b62de' },
+  { name: 'C / C++', svgPath: `${import.meta.env.BASE_URL}tech/cpp.svg`, color: '#00599c' },
+];
+
+// Creates high-resolution official vector logo textures on both Front (25%) and Back (75%)
+export function createOfficialTechTexture(badge: TechBadgeConfig): THREE.CanvasTexture {
   const width = 1024;
   const height = 512;
   const canvas = document.createElement('canvas');
@@ -9,66 +32,72 @@ export function createTechTexture(name: string, symbol: string, color: string, b
   canvas.height = height;
   const ctx = canvas.getContext('2d')!;
 
-  // 1. Glossy White Spherical Background
-  ctx.fillStyle = bgColor;
+  // 1. Glossy White Background
+  ctx.fillStyle = '#ffffff';
   ctx.fillRect(0, 0, width, height);
-
-  // Helper function to draw branded logo badge at a given center X position
-  const drawBadge = (centerX: number) => {
-    ctx.save();
-    ctx.translate(centerX, height / 2);
-
-    // Subtle ambient circular ring
-    ctx.strokeStyle = 'rgba(0, 0, 0, 0.06)';
-    ctx.lineWidth = 3;
-    ctx.beginPath();
-    ctx.arc(0, 0, 180, 0, Math.PI * 2);
-    ctx.stroke();
-
-    // Icon / Symbol
-    ctx.fillStyle = color;
-    ctx.font = 'bold 110px "Space Grotesk", sans-serif';
-    ctx.textAlign = 'center';
-    ctx.textBaseline = 'middle';
-    ctx.fillText(symbol, 0, -35);
-
-    // Technology Name Text
-    ctx.fillStyle = '#0f172a';
-    ctx.font = 'bold 44px "Space Grotesk", sans-serif';
-    ctx.fillText(name, 0, 60);
-
-    // Accent Color Underline Bar
-    ctx.fillStyle = color;
-    ctx.fillRect(-60, 100, 120, 8);
-
-    ctx.restore();
-  };
-
-  // 2. Draw on Front Side (Center at 25%)
-  drawBadge(width * 0.25);
-
-  // 3. Draw on Back Side (Center at 75%) so no blank white space is visible when rotating
-  drawBadge(width * 0.75);
 
   const texture = new THREE.CanvasTexture(canvas);
   texture.colorSpace = THREE.SRGBColorSpace;
-  texture.needsUpdate = true;
+
+  // 2. Load Official SVG Image and draw on both Front and Back
+  const img = new Image();
+  img.crossOrigin = 'anonymous';
+  img.src = badge.svgPath;
+
+  img.onload = () => {
+    // Clear background
+    ctx.fillStyle = '#ffffff';
+    ctx.fillRect(0, 0, width, height);
+
+    const drawLogo = (centerX: number) => {
+      ctx.save();
+      ctx.translate(centerX, height / 2);
+
+      // Draw official logo
+      const logoSize = 210;
+      ctx.drawImage(img, -logoSize / 2, -logoSize / 2 - 25, logoSize, logoSize);
+
+      // Clean label under official logo
+      ctx.fillStyle = '#0f172a';
+      ctx.font = 'bold 36px "Space Grotesk", sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText(badge.name, 0, 130);
+
+      ctx.restore();
+    };
+
+    // Front face (25%)
+    drawLogo(width * 0.25);
+
+    // Back face (75%)
+    drawLogo(width * 0.75);
+
+    texture.needsUpdate = true;
+  };
+
+  // Immediate fallback render before SVG image finishes decoding
+  const renderFallback = () => {
+    ctx.fillStyle = '#ffffff';
+    ctx.fillRect(0, 0, width, height);
+
+    const drawText = (centerX: number) => {
+      ctx.save();
+      ctx.translate(centerX, height / 2);
+      ctx.fillStyle = badge.color;
+      ctx.font = 'bold 50px "Space Grotesk", sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText(badge.name, 0, 0);
+      ctx.restore();
+    };
+
+    drawText(width * 0.25);
+    drawText(width * 0.75);
+    texture.needsUpdate = true;
+  };
+
+  renderFallback();
+
   return texture;
 }
-
-export const TECH_BADGES = [
-  { name: 'React', symbol: '⚛', color: '#0284c7' },
-  { name: 'TypeScript', symbol: 'TS', color: '#2563eb' },
-  { name: 'Next.js', symbol: '▲', color: '#000000' },
-  { name: 'Node.js', symbol: '⬢', color: '#16a34a' },
-  { name: 'Firebase', symbol: '🔥', color: '#ea580c' },
-  { name: 'Gemini AI', symbol: '✦', color: '#9333ea' },
-  { name: 'Python', symbol: '🐍', color: '#0284c7' },
-  { name: 'Tailwind', symbol: '≈', color: '#0891b2' },
-  { name: 'MySQL', symbol: '🐬', color: '#0369a1' },
-  { name: 'Vite', symbol: '⚡', color: '#c026d3' },
-  { name: 'JavaScript', symbol: 'JS', color: '#ca8a04' },
-  { name: 'C / C++', symbol: 'C++', color: '#1d4ed8' },
-  { name: 'Java', symbol: '☕', color: '#c2410c' },
-  { name: 'GitHub', symbol: '🐙', color: '#1e293b' },
-];
