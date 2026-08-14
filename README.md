@@ -132,9 +132,13 @@
 ## 📊 GitHub Profile Highlights & Activity
 
 <div align="center">
-  <img src="https://streak-stats.demolab.com/?user=Naseem2917&theme=tokyonight&hide_border=true&background=08090d&ring=06b6d4&fire=8b5cf6" alt="Naseem's GitHub Streak" />
-  <br /><br />
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Naseem2917&bg_color=08090d&color=06b6d4&line=8b5cf6&point=ffffff&hide_border=true" alt="Naseem's Contribution Graph" />
+  <p align="center">
+    <img src="https://img.shields.io/github/followers/Naseem2917?label=Followers&style=for-the-badge&logo=github&color=06b6d4" alt="Followers" />
+    <img src="https://img.shields.io/badge/Contributions-Active%20Developer-8b5cf6?style=for-the-badge&logo=git&logoColor=white" alt="Contributions" />
+    <img src="https://img.shields.io/badge/Status-Available%20for%20Hire-10b981?style=for-the-badge&logo=codefactor&logoColor=white" alt="Status" />
+  </p>
+  <br />
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Naseem2917&bg_color=08090d&color=06b6d4&line=8b5cf6&point=ffffff&hide_border=true" alt="Naseem's Contribution Graph" width="100%" />
 </div>
 
 ---
