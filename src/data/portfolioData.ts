@@ -78,7 +78,7 @@ export const portfolioData: PortfolioData = {
       ],
       githubUrl: "https://github.com/Naseem2917/ai-code-typer",
       demoUrl: "https://naseem2917.github.io/ai-code-typer/",
-      image: "./images/ai-code-typer.jpg",
+      image: `${import.meta.env.BASE_URL}images/ai-code-typer.jpg`,
       featured: true
     },
     {
@@ -97,7 +97,7 @@ export const portfolioData: PortfolioData = {
       ],
       githubUrl: "https://github.com/Naseem2917/Smart-Complaint-Box",
       demoUrl: "https://smart-complaint-box-2025.web.app/",
-      image: "./images/smart-complaint.jpg",
+      image: `${import.meta.env.BASE_URL}images/smart-complaint.jpg`,
       featured: true
     },
     {
@@ -116,7 +116,7 @@ export const portfolioData: PortfolioData = {
       ],
       githubUrl: "https://github.com/Naseem2917/WhatsApp",
       demoUrl: "https://whatsapp-hackthon.web.app/",
-      image: "./images/whatsapp-clone.jpg",
+      image: `${import.meta.env.BASE_URL}images/whatsapp-clone.jpg`,
       featured: true
     }
   ],

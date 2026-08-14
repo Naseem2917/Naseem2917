@@ -1,7 +1,7 @@
 import React from 'react';
 import { Layers, Cpu, Database, Wrench, Terminal } from 'lucide-react';
 import { portfolioData } from '../../data/portfolioData';
-import { GravityPhysicsCanvas } from './GravityPhysicsCanvas';
+import { TechStack3DPhysics } from './TechStack3DPhysics';
 
 export const TechStack: React.FC = () => {
   return (
@@ -9,22 +9,22 @@ export const TechStack: React.FC = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="flex flex-col items-center text-center mb-14">
+        <div className="flex flex-col items-center text-center mb-10">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/10 border border-secondary/20 text-secondary text-xs font-mono mb-3">
             <Terminal className="w-3.5 h-3.5" />
-            <span>02 // SKILLS & ARSENAL</span>
+            <span>02 // SKILLS & TECHSTACK</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-display font-bold text-white tracking-tight">
-            My <span className="text-gradient">Tech Stack</span> & Interactive Playground
+            Interactive <span className="text-gradient">3D Tech Stack</span>
           </h2>
-          <p className="text-slate-400 text-sm sm:text-base max-w-2xl mt-3">
-            Modern frontend toolkits, real-time cloud architectures, AI integrations, and fundamental computer science skills.
+          <p className="text-slate-400 text-sm sm:text-base max-w-2xl mt-2">
+            Physics-driven 3D interactive spheres with continuous collision dynamics and mouse interaction.
           </p>
         </div>
 
-        {/* 1. Interactive Gravity Physics Playground (The User's Loved Feature) */}
-        <div className="mb-14">
-          <GravityPhysicsCanvas />
+        {/* 1. Exact 3D Glossy Spheres Gravity Physics Playground */}
+        <div className="mb-14 shadow-2xl">
+          <TechStack3DPhysics />
         </div>
 
         {/* 2. Structured Skills Grid */}

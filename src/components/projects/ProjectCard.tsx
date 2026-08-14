@@ -18,6 +18,13 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
           alt={project.title}
           className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
           loading="lazy"
+          onError={(e) => {
+            const target = e.currentTarget;
+            if (!target.dataset.tried) {
+              target.dataset.tried = 'true';
+              target.src = `images/${project.id === 'ai-code-typer' ? 'ai-code-typer.jpg' : project.id === 'smart-complaint-box' ? 'smart-complaint.jpg' : 'whatsapp-clone.jpg'}`;
+            }
+          }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent opacity-80" />
 
