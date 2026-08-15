@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Github, Linkedin, Sparkles, Terminal } from 'lucide-react';
+import { Menu, X, Github, Linkedin } from 'lucide-react';
 import { portfolioData } from '../../data/portfolioData';
+import { BrandLogo } from '../common/BrandLogo';
 
 const NAV_LINKS = [
   { name: 'About', href: '#about' },
@@ -48,16 +49,12 @@ export const Navbar: React.FC = () => {
             : 'bg-surface/30 backdrop-blur-md border border-white/5'
         }`}
       >
-        {/* Brand / Monogram */}
+        {/* Brand / Custom Logo */}
         <a
           href="#home"
-          className="flex items-center gap-2.5 group cursor-pointer"
+          className="flex items-center gap-3 group cursor-pointer"
         >
-          <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-primary to-secondary p-[1px] shadow-lg shadow-primary/20">
-            <div className="w-full h-full bg-background rounded-[11px] flex items-center justify-center text-primary group-hover:text-white transition-colors font-mono font-bold text-sm">
-              <Terminal className="w-4 h-4" />
-            </div>
-          </div>
+          <BrandLogo size={36} className="group-hover:scale-105 transition-transform" />
           <div className="flex flex-col">
             <span className="font-display font-bold text-sm text-white tracking-wide flex items-center gap-1.5">
               NASEEM KHAN
@@ -75,7 +72,7 @@ export const Navbar: React.FC = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className={`px-3.5 py-1 text-xs font-medium rounded-full transition-all duration-200 ${
+                className={`px-4 py-1 text-xs font-medium rounded-full transition-all duration-200 ${
                   isActive
                     ? 'bg-primary/15 text-primary border border-primary/30 shadow-sm'
                     : 'text-slate-300 hover:text-white hover:bg-white/5'
@@ -87,14 +84,15 @@ export const Navbar: React.FC = () => {
           })}
         </nav>
 
-        {/* Action & Social Buttons */}
-        <div className="hidden sm:flex items-center gap-3">
+        {/* Social Links */}
+        <div className="hidden sm:flex items-center gap-2">
           <a
             href={portfolioData.personal.github}
             target="_blank"
             rel="noreferrer"
-            className="p-2 rounded-xl text-slate-300 hover:text-white hover:bg-surface-border transition-colors border border-transparent hover:border-white/10"
+            className="p-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-surface-border transition-colors border border-transparent hover:border-white/10"
             aria-label="GitHub Profile"
+            title="GitHub Profile"
           >
             <Github className="w-4 h-4" />
           </a>
@@ -102,17 +100,11 @@ export const Navbar: React.FC = () => {
             href={portfolioData.personal.linkedin}
             target="_blank"
             rel="noreferrer"
-            className="p-2 rounded-xl text-slate-300 hover:text-white hover:bg-surface-border transition-colors border border-transparent hover:border-white/10"
+            className="p-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-surface-border transition-colors border border-transparent hover:border-white/10"
             aria-label="LinkedIn Profile"
+            title="LinkedIn Profile"
           >
             <Linkedin className="w-4 h-4" />
-          </a>
-          <a
-            href="#contact"
-            className="flex items-center gap-1.5 bg-gradient-to-r from-primary to-secondary hover:opacity-90 text-white font-medium text-xs px-4 py-2 rounded-xl shadow-lg shadow-primary/20 transition-all hover:scale-105 active:scale-95"
-          >
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>Hire Me</span>
           </a>
         </div>
 
@@ -166,9 +158,9 @@ export const Navbar: React.FC = () => {
               <a
                 href="#contact"
                 onClick={() => setMobileMenuOpen(false)}
-                className="flex items-center gap-2 bg-primary text-background font-semibold text-xs px-4 py-2.5 rounded-xl"
+                className="text-xs font-mono text-primary hover:underline"
               >
-                <span>Let's Connect</span>
+                khannaseem1704@gmail.com
               </a>
             </div>
           </div>

@@ -1,17 +1,28 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Terminal, GraduationCap, Users, CheckCircle2, ArrowDown, Sparkles } from 'lucide-react';
+import { Terminal, GraduationCap, Users, CheckCircle2, ArrowDown, ArrowUp, Sparkles } from 'lucide-react';
 import { portfolioData } from '../../data/portfolioData';
 
 export const ExperienceTimeline: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [arrowProgress, setArrowProgress] = useState(0);
+  const [scrollDirection, setScrollDirection] = useState<'down' | 'up'>('down');
+  const lastScrollY = useRef(0);
 
-  // Dynamic Scroll-Following Arrow Logic
+  // Dynamic Scroll-Following Arrow Logic with Bi-directional Pointer
   useEffect(() => {
     let animFrameId: number;
 
     const updateArrowPosition = () => {
       if (!containerRef.current) return;
+
+      const currentScrollY = window.scrollY;
+      if (currentScrollY > lastScrollY.current + 3) {
+        setScrollDirection('down');
+      } else if (currentScrollY < lastScrollY.current - 3) {
+        setScrollDirection('up');
+      }
+      lastScrollY.current = currentScrollY;
+
       const rect = containerRef.current.getBoundingClientRect();
       const windowHeight = window.innerHeight;
 
@@ -46,13 +57,13 @@ export const ExperienceTimeline: React.FC = () => {
         <div className="flex flex-col items-start mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-secondary/10 border border-secondary/20 text-secondary text-xs font-mono mb-4">
             <Terminal className="w-3.5 h-3.5" />
-            <span>04 // CAREER & EDUCATION</span>
+            <span>04 // EDUCATION & EXPERIENCE</span>
           </div>
           <h2 className="text-4xl sm:text-6xl font-display font-extrabold text-white tracking-tight">
             Education <span>&</span> <span className="text-gradient">Experience</span>
           </h2>
           <p className="text-slate-400 text-sm sm:text-base max-w-xl mt-3">
-            Academic achievements, hackathon team leadership, and technical event management.
+            Academic track record, hackathon leadership, and technical event management.
           </p>
         </div>
 
@@ -68,7 +79,7 @@ export const ExperienceTimeline: React.FC = () => {
             style={{ height: `${arrowProgress * 100}%` }}
           />
 
-          {/* DYNAMIC MOVING ARROW LIGHT (Scroll-following pointer) */}
+          {/* DYNAMIC MOVING ARROW LIGHT (Points Down when scrolling down, Points Up when scrolling up) */}
           <div
             className="absolute -left-[18px] w-10 h-10 rounded-full bg-surface border-2 border-primary flex items-center justify-center text-primary shadow-[0_0_20px_rgba(6,182,212,0.8)] transition-all duration-100 ease-out z-20 will-change-transform"
             style={{
@@ -76,8 +87,12 @@ export const ExperienceTimeline: React.FC = () => {
               transform: 'translateY(-50%)',
             }}
           >
-            <div className="w-full h-full rounded-full bg-primary/20 flex items-center justify-center">
-              <ArrowDown className="w-5 h-5 text-cyan-300 animate-bounce" />
+            <div className="w-full h-full rounded-full bg-primary/20 flex items-center justify-center transition-transform duration-300">
+              {scrollDirection === 'down' ? (
+                <ArrowDown className="w-5 h-5 text-cyan-300 animate-bounce" />
+              ) : (
+                <ArrowUp className="w-5 h-5 text-cyan-300 animate-bounce" />
+              )}
             </div>
           </div>
 

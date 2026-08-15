@@ -142,25 +142,25 @@ export const TechStack3DPhysics: React.FC = () => {
       {/* Top Header Controls */}
       <div className="absolute top-4 left-4 right-4 z-20 flex items-center justify-between pointer-events-none">
         <div className="flex items-center gap-2 bg-surface/80 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/10 text-xs font-mono text-slate-300">
-          <Sparkles className="w-3.5 h-3.5 text-primary animate-pulse" />
-          <span>3D Physics Gravity Spheres</span>
+          <Sparkles className="w-3.5 h-3.5 text-primary" />
+          <span>Interactive Spheres</span>
         </div>
 
         <button
           onClick={() => setKeyReset((k) => k + 1)}
           className="pointer-events-auto flex items-center gap-1.5 bg-surface/90 hover:bg-surface-border backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/10 text-xs font-mono text-slate-300 hover:text-white transition-all shadow-md active:scale-95"
-          title="Drop Spheres Again"
+          title="Reset"
         >
           <RotateCcw className="w-3.5 h-3.5" />
-          <span>Reset Spheres</span>
+          <span>Reset</span>
         </button>
       </div>
 
       {/* 3D WebGL Canvas */}
-      <CanvasErrorBoundary fallbackText="3D Physics running in smooth mode">
+      <CanvasErrorBoundary fallbackText="Tech Stack running in smooth mode">
         <Suspense fallback={
           <div className="w-full h-full flex items-center justify-center text-primary text-sm animate-pulse font-mono">
-            Loading 3D Physics Tech Spheres...
+            Loading Tech Stack...
           </div>
         }>
           <Canvas
