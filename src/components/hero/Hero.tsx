@@ -34,7 +34,7 @@ export const Hero: React.FC = () => {
 
       <div className="w-full max-w-[1700px] mx-auto px-6 sm:px-12 lg:px-16 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
-          
+
           {/* Left Column: Hero Text & CTAs */}
           <div className="lg:col-span-7 flex flex-col items-start text-left z-10">
             {/* Status Pill */}
@@ -57,9 +57,8 @@ export const Hero: React.FC = () => {
               <div className="flex items-center gap-2.5 px-4 py-2 rounded-xl bg-surface-light/80 border border-primary/30 backdrop-blur-md">
                 <Code2 className="w-4 h-4 text-primary animate-pulse" />
                 <span
-                  className={`text-sm sm:text-base font-mono font-semibold text-primary transition-all duration-300 ${
-                    isFlipping ? 'opacity-0 -translate-y-2' : 'opacity-100 translate-y-0'
-                  }`}
+                  className={`text-sm sm:text-base font-mono font-semibold text-primary transition-all duration-300 ${isFlipping ? 'opacity-0 -translate-y-2' : 'opacity-100 translate-y-0'
+                    }`}
                 >
                   {ROLES[roleIndex]}
                 </span>

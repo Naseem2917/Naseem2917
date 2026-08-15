@@ -19,22 +19,19 @@ export const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-24 relative overflow-hidden">
-      {/* Background ambient glow */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[700px] h-[300px] bg-primary/5 rounded-full filter blur-[150px] pointer-events-none -z-10" />
-
-      <div className="w-full max-w-[1500px] mx-auto px-6 sm:px-12 lg:px-16">
+    <section id="contact" className="portfolio-section">
+      <div className="portfolio-container">
         
         {/* Section Header */}
-        <div className="flex flex-col items-center text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-mono mb-4">
+        <div className="flex flex-col items-center text-center mb-14">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-mono mb-3">
             <Terminal className="w-3.5 h-3.5" />
             <span>05 // CONTACT INFORMATION</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-display font-extrabold text-white tracking-tight">
             Get in <span className="text-gradient">Touch</span>
           </h2>
-          <p className="text-slate-400 text-sm sm:text-base max-w-xl mt-3">
+          <p className="text-slate-400 text-sm sm:text-base max-w-xl mt-2">
             Feel free to connect directly via email, phone, or professional networks.
           </p>
         </div>

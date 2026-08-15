@@ -180,9 +180,9 @@ export const Hero3DScene: React.FC = () => {
             <directionalLight position={[10, 10, 5]} intensity={1.5} color="#ffffff" />
             <pointLight position={[-10, -10, -5]} intensity={1} color="#06b6d4" />
             <pointLight position={[5, -5, 5]} intensity={1.2} color="#8b5cf6" />
-            
+
             <CyberCore />
-            
+
             <OrbitControls
               enableZoom={false}
               enablePan={false}
@@ -194,7 +194,7 @@ export const Hero3DScene: React.FC = () => {
           </Canvas>
         </Suspense>
       </CanvasErrorBoundary>
-      
+
       <div className="absolute bottom-2 text-[11px] font-mono tracking-wider text-slate-500 uppercase flex items-center gap-1.5 pointer-events-none">
         <span className="w-1.5 h-1.5 rounded-full bg-primary animate-ping" />
         Interactive 3D Core • Drag to Rotate

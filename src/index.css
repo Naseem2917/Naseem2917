@@ -18,15 +18,51 @@ body {
 ::-webkit-scrollbar {
   width: 8px;
 }
+
 ::-webkit-scrollbar-track {
   background: #08090d;
 }
+
 ::-webkit-scrollbar-thumb {
   background: #1e2433;
   border-radius: 4px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: #06b6d4;
+}
+
+/* Universal Standard Section Architecture */
+.portfolio-section {
+  scroll-margin-top: 80px;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.portfolio-container {
+  width: 100%;
+  max-width: 1700px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .portfolio-container {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .portfolio-container {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
 }
 
 /* Glassmorphic Cards */

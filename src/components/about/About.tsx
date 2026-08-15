@@ -4,16 +4,16 @@ import { portfolioData } from '../../data/portfolioData';
 
 export const About: React.FC = () => {
   return (
-    <section id="about" className="py-24 relative overflow-hidden">
-      <div className="w-full max-w-[1550px] mx-auto px-6 sm:px-12 lg:px-16">
+    <section id="about" className="portfolio-section">
+      <div className="portfolio-container">
         
         {/* Section Pill & Title */}
-        <div className="flex flex-col items-start mb-12">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-mono mb-4">
+        <div className="flex flex-col items-start mb-10">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-mono mb-3">
             <Terminal className="w-3.5 h-3.5" />
             <span>01 // ABOUT ME</span>
           </div>
-          <h2 className="text-4xl sm:text-5xl font-display font-extrabold text-white tracking-tight">
+          <h2 className="text-3xl sm:text-5xl font-display font-extrabold text-white tracking-tight">
             Engineering Web Systems with <span className="text-gradient">Precision & Speed</span>
           </h2>
         </div>

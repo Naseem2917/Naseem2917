@@ -50,25 +50,25 @@ export const ExperienceTimeline: React.FC = () => {
   }, []);
 
   return (
-    <section id="experience" className="py-24 relative overflow-hidden bg-surface/20">
-      <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-12 lg:px-16">
+    <section id="experience" className="portfolio-section bg-surface/20">
+      <div className="portfolio-container">
         
         {/* Section Header */}
-        <div className="flex flex-col items-start mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-secondary/10 border border-secondary/20 text-secondary text-xs font-mono mb-4">
+        <div className="flex flex-col items-start mb-14">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-secondary/10 border border-secondary/20 text-secondary text-xs font-mono mb-3">
             <Terminal className="w-3.5 h-3.5" />
             <span>04 // EDUCATION & EXPERIENCE</span>
           </div>
-          <h2 className="text-4xl sm:text-6xl font-display font-extrabold text-white tracking-tight">
+          <h2 className="text-3xl sm:text-5xl font-display font-extrabold text-white tracking-tight">
             Education <span>&</span> <span className="text-gradient">Experience</span>
           </h2>
-          <p className="text-slate-400 text-sm sm:text-base max-w-xl mt-3">
+          <p className="text-slate-400 text-sm sm:text-base max-w-xl mt-2">
             Academic track record, hackathon leadership, and technical event management.
           </p>
         </div>
 
         {/* Timeline Container */}
-        <div ref={containerRef} className="relative pl-8 sm:pl-16 ml-2 sm:ml-6 space-y-12 min-h-[600px]">
+        <div ref={containerRef} className="relative pl-8 sm:pl-16 ml-2 sm:ml-6 space-y-10 min-h-[500px]">
           
           {/* Base Vertical Timeline Track */}
           <div className="absolute left-0 top-3 bottom-3 w-[3px] bg-surface-border rounded-full" />

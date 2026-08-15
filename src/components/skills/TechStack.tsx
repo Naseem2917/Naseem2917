@@ -5,8 +5,8 @@ import { TechStack3DPhysics } from './TechStack3DPhysics';
 
 export const TechStack: React.FC = () => {
   return (
-    <section id="skills" className="py-20 relative overflow-hidden bg-surface/30">
-      <div className="w-full max-w-[1700px] mx-auto px-6 sm:px-12 lg:px-16">
+    <section id="skills" className="portfolio-section bg-surface/30">
+      <div className="portfolio-container">
         
         {/* Section Header (Clean & Direct) */}
         <div className="flex flex-col items-center text-center mb-10">

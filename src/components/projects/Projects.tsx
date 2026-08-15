@@ -59,8 +59,8 @@ export const Projects: React.FC = () => {
       ref={sectionRef}
       className="relative min-h-[300vh] bg-background"
     >
-      {/* Sticky Pin Container: Locks in viewport while scrolling horizontally */}
-      <div className="sticky top-0 h-screen w-full flex flex-col justify-center overflow-hidden px-6 sm:px-12 lg:px-16">
+      {/* Sticky Pin Container — pt-20 offsets the fixed navbar (~80px tall) */}
+      <div className="sticky top-0 h-screen w-full flex flex-col justify-center overflow-hidden pt-20 px-6 sm:px-12 lg:px-16">
         
         {/* Section Header */}
         <div className="w-full max-w-[1700px] mx-auto mb-6 flex-shrink-0">
@@ -95,7 +95,7 @@ export const Projects: React.FC = () => {
               className="w-[90vw] sm:w-[780px] md:w-[940px] lg:w-[1150px] flex-shrink-0 glass-panel rounded-3xl p-6 sm:p-10 border-surface-border hover:border-primary/40 transition-all duration-300 flex flex-col lg:flex-row items-center gap-8 group shadow-2xl bg-surface/80"
             >
               
-              {/* Left Column: Project Details (Matching User's Screenshot) */}
+              {/* Left Column: Project Details */}
               <div className="w-full lg:w-[45%] flex flex-col justify-between self-stretch">
                 <div>
                   
@@ -155,7 +155,7 @@ export const Projects: React.FC = () => {
 
               </div>
 
-              {/* Right Column: Full Widescreen 16:9 / 16:10 Mockup (NO UNCROP / NO 1:1 SQUISH) */}
+              {/* Right Column: Full Widescreen 16:9 / 16:10 Mockup */}
               <div className="w-full lg:w-[55%] aspect-[16/10] sm:aspect-[16/9] max-h-[360px] sm:max-h-[420px] rounded-2xl overflow-hidden bg-surface-light border border-surface-border relative group-hover:border-primary/40 transition-colors shadow-2xl flex items-center justify-center p-2">
                 <img
                   src={project.image}
